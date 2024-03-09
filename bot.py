@@ -40,7 +40,7 @@ clock = pygame.time.Clock()
 waveform_change_y = 800
 waveform_change_x = 0
 
-cooldown = 50
+steps = 50
 
 last = pygame.time.get_ticks()
 
@@ -52,17 +52,18 @@ while running:
     
     now = pygame.time.get_ticks()
 
-    if now - last >= cooldown:
+    if now - last >= steps:
 
         last = now
 
-        if waveform_change_x > 800:
-            pass
+        if waveform_change_x >= 800:
+            waveform_change_y = 400
+            waveform_change_x = 800
         else:
             waveform_change_y -= 1
             waveform_change_x += 1
 
-
+    print(waveform_change_x, waveform_change_y)
     screen.fill((0, 0, 0))
 
 
