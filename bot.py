@@ -5,6 +5,7 @@ import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+import random
 
 pygame.init()
 
@@ -17,9 +18,16 @@ y, sr = librosa.load(music_file)
 D = np.abs(librosa.stft(y))
 S = librosa.amplitude_to_db(D, ref=np.max)
 
-S_color = cm.viridis((S - S.min()) / (S.max() - S.min()))
+colormaps = list(plt.colormaps())
+color = random.uniform(0, 1)
+random_colormap = random.choice(list(plt.colormaps()))
 
-#print(S_color)
+method = getattr(cm, random_colormap)
+result = method((S - S.min()) / (S.max() - S.min()))
+#S_color = cm(random_colormap)((S - S.min()) / (S.max() - S.min()))
+S_color = result
+
+
 
 pygame.mixer.music.load(music_file)
 pygame.mixer.music.play(-1)
