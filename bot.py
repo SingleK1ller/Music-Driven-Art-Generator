@@ -19,13 +19,12 @@ D = np.abs(librosa.stft(y))
 S = librosa.amplitude_to_db(D, ref=np.max)
 
 colormaps = list(plt.colormaps())
-color = random.uniform(0, 1)
 random_colormap = random.choice(list(plt.colormaps()))
 
-method = getattr(cm, random_colormap)
-result = method((S - S.min()) / (S.max() - S.min()))
 #S_color = cm(random_colormap)((S - S.min()) / (S.max() - S.min()))
-S_color = result
+random_colormap_generator = getattr(cm, random_colormap)
+colormap_generator_caller = random_colormap_generator((S - S.min()) / (S.max() - S.min()))
+S_color = colormap_generator_caller
 
 
 
