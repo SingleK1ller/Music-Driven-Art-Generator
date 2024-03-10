@@ -16,7 +16,7 @@ music_file = 'Tax Evasion.mp3'
 
 y, sr = librosa.load(music_file)
 D = np.abs(librosa.stft(y))
-S = librosa.amplitude_to_db(D, ref=np.max)
+S = librosa.amplitude_to_db(D, ref=np.max)  
 
 colormaps = list(plt.colormaps())
 random_colormap = random.choice(list(plt.colormaps()))
@@ -45,7 +45,6 @@ steps = 50
 last = pygame.time.get_ticks()
 
 while running:
-    #print(beat_times)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -63,7 +62,6 @@ while running:
             waveform_change_y -= 1
             waveform_change_x += 1
 
-    print(waveform_change_x, waveform_change_y)
     screen.fill((0, 0, 0))
 
 
