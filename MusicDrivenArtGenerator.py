@@ -12,7 +12,7 @@ pygame.init()
 width, height = 800, 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Music-Driven Art Visualizer')
-music_file = 'Tax Evasion.mp3'
+music_file = 'SampleSong.mp3' # Track name here
 
 y, sr = librosa.load(music_file)
 D = np.abs(librosa.stft(y))
