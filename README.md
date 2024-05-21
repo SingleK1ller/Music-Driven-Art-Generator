@@ -19,6 +19,10 @@ Save the script as a Python file (e.g., music_visualizer.py).
 Place your music file (e.g., SampleSong.mp3) in the same directory as the script.
 Run the script from the command line using python music_visualizer.py.
 
+![image](https://github.com/SingleK1ller/Music-Driven-Art-Generator/assets/169086331/a60d20e9-651a-40cd-9f99-b8af99332ca0)
+![image](https://github.com/SingleK1ller/Music-Driven-Art-Generator/assets/169086331/64e5941b-1752-4ab2-9729-090f0f8dfd53)
+
+
 
 Note: Replace "SampleSong.mp3" with the actual filename of your music file.
 
